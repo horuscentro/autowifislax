@@ -1,0 +1,26 @@
+#!/bin/sh
+FILES=*
+
+for f in $FILES
+do
+
+        echo "---------------------------"
+        echo "entrando al directorio $f"
+        cd $f
+        sleep 1
+        FILES2=*
+        for f2 in $FILES2
+        do
+                echo "Configurando $f2->" 
+                ./$f2
+                echo "Configuracion terminada del programa $f2 "
+        sleep 1
+        done
+
+        echo "saliendo del directorio $f"
+        echo "---------------------------"
+        cd ..
+
+done
+
+
